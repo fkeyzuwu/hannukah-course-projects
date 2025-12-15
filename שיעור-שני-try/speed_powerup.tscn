@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://df6u82gb81tn3"]
+
+[ext_resource type="Script" uid="uid://casdysj5f43kv" path="res://speed_powerup.gd" id="1_3d23n"]
+[ext_resource type="Texture2D" uid="uid://4pbflq4klbrb" path="res://art/Sprites/Tiles/Default/gem_green.png" id="1_wg43s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_22hbu"]
+radius = 23.0
+
+[node name="SpeedPowerup" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_3d23n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wg43s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_22hbu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

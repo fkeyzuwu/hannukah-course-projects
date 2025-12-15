@@ -1,0 +1,211 @@
+[gd_scene load_steps=30 format=4 uid="uid://dtyxoxejxj1jb"]
+
+[ext_resource type="Script" uid="uid://pg5upsf6kx84" path="res://enemy.gd" id="1_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://u30kad10xfrl" path="res://assets/art/Characters(100x100)/Orc/Orc-Death.png" id="2_epg4t"]
+[ext_resource type="Texture2D" uid="uid://dmaub5r5p4qnf" path="res://assets/art/Characters(100x100)/Orc/Orc-Idle.png" id="2_iifgy"]
+[ext_resource type="Texture2D" uid="uid://iocqlwx56302" path="res://assets/art/Characters(100x100)/Orc/Orc-Walk.png" id="3_epg4t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yqyl"]
+atlas = ExtResource("2_epg4t")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wujgv"]
+atlas = ExtResource("2_epg4t")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb8ge"]
+atlas = ExtResource("2_epg4t")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1ltt"]
+atlas = ExtResource("2_epg4t")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulg5d"]
+atlas = ExtResource("2_iifgy")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8wxw"]
+atlas = ExtResource("2_iifgy")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifkgp"]
+atlas = ExtResource("2_iifgy")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yslcn"]
+atlas = ExtResource("2_iifgy")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjt1t"]
+atlas = ExtResource("2_iifgy")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocmy3"]
+atlas = ExtResource("2_iifgy")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nkyl"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3rue"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctoli"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jsuu"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okvou"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrdm7"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqyoq"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yai00"]
+atlas = ExtResource("3_epg4t")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2orkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yqyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wujgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb8ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1ltt")
+}],
+"loop": false,
+"name": &"die",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulg5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8wxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifkgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yslcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjt1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocmy3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nkyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3rue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctoli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jsuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okvou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrdm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yai00")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0b4ue"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n6urq"]
+radius = 9.0
+height = 18.0
+
+[sub_resource type="OggPacketSequence" id="OggPacketSequence_ldmoa"]
+packet_data = Array[Array]([[PackedByteArray("AXZvcmJpcwAAAAABRKwAAAAAAAAAdwEAAAAAALgB")], [PackedByteArray("A3ZvcmJpcysAAABYaXBoLk9yZyBsaWJWb3JiaXMgSSAyMDEyMDIwMyAoT21uaXByZXNlbnQpAAAAAAE="), PackedByteArray("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")], [PackedByteArray("/H6nmRgN9N3e+vcEYJ2DYWuxDjWgg8afYX5P9oznCPSDjnYyKP5moKQqBC5HbwA="), PackedByteArray("FI+nAwBeOG4fMkmHLx/Kd+vkW3rQXZLFoXOGMnjrdfIbjmvtO0bZW42rNXbMBQ=="), PackedByteArray("ehmm6iXQAILhBwSAKiTTWHKVtloxBdDf+ndnBsSLo9PJGON4K3FsNd9ac7JzI3vo3e64fLfp+xX1nDKQKIi7r8idzXRK8TAEQJQswj0uoImOKIZvJEX+59P4PLSYFHVr6QRhxdaqfEzvlllhfR9uz3tKLRxyhyk1pSAL6sNytMjgP0RQ6CJe9ku7eg58EFtJXCnIffEid3fUZqiW8GLv+brwWJrHZG3q0vborLo1Yi9eWTe06mR5YMW28tLbzD3ec1yLPI9mIOe6nhoJAA=="), PackedByteArray("/gqe2jWCpVxowB8AAPRoABi1lquiUYIB4Or6O8B2e8kH4n0x0f9IKWSmbyTp/tJaZ4w0mO6Fj7ue8xYaAzo7sXTn1q4z9gqcGq2OMlWzR5592I+spGpMGIeMc5ys4EnyQ1xVxRx9ea7xxewX1aauSGWXO33ydJbvINvXiVo45utlPQcFCh+BuziobOjWCsPOE8P7+KILzmKzGqkuw9sQ8MNJbSqMbWuFoepp/SmO8A7krFq3lmKfPDXsYIQ6Sb3t4kp0AA=="), PackedByteArray("nvqd4jVOklYUcP2jAgDOdwYSVbKp8mKiKADWXxus7YyBJL652ImSMnMv2KGA5PCT2TUFhCPvuPJXT1J+9rSliOsqtmquZfjz3f357Q+V1dkRmxE5vCO5IMyZQRwcD9pu6U+nXr20gG4wil9V3W5lz6dOa6ubsvsXjBz7laXemJn7OwnBwLUcMWe2RbVpjqixPTOtkOIt+WZmSctQvXKaqL55NhSUmgcTzJdbkOXUG2HuBM+GrytxkjeHVUz7qwr+N+70u++sZAM="), PackedByteArray("ntpd4i2CpEAD9w8AwLYbIolRa52UjloxAExI6POA/7Mp2yE8HruQidblPWmOq9faC6khR7xQA5oi4HbIeBnKrk0buXOIZ1pSZBmvjXibU195Rui5iZNECfndqthWoe9b0HbvLpXlMyIGIZLaVq7FYVo4Kaj8Sn3vJETgLN3DPaaWWJU4vCw8sbnnF410uG/D5DUinBT7xWYcvpVHnGRs9b08eN4VWqQbWcLrXfmbGP6Iyw+vSGeNDzobEwA="), PackedByteArray("Xqo94qNCiKBUhe8HACBJGI325ahJogIAPswwKAXjQ8m+/vfDVzN9HfMdnFHk8pwPnElS033RxgGPLlw89WxayLU22nyLO+mfMdb4zlXrjRgtF31d4tdzodCvnsxQXZfec0sMV2/l1F4q/pPo1vAAaS0vP0x1+/9OVjzyUy5qire9b/oYej1YT8cOgqys1X616pUHuSWeevHULpAQhrDTLf0MW8DWu6+aBkSy+iBigj2Fawqo7fYa"), PackedByteArray("nkk9/T0QgAbex5cr0ONkO2lARSOX5+kkRAGw3AdWR7zADtFyG7dsuPNpqLVOfWVTNiSslzad0XWlb18n04Kncz5Cj9eX+emTcq6YDei0SDI5E/+z+Hnd8O7C9qemciddH39o2rFdrR/Z4JCpQnDyomh4T17Mci9LI92axbUR1cm5LFIVtauWlsAnhl8GZsJa+G1Hz4ladTylq+xpA1IUXVDUSCLNLSIlSbwaQPByagLW0LRQ4Yqiv5c6AA=="), PackedByteArray("/nn8Wm5ZLRnsBnj2JTBgA1XAWLEqRlIrTQGV8zgCbr5yqR34nQvar8w+nHxmSa6Mw6crrtn9VRv444xgy5BRcbElJX/5OgZ9dTlhi5qRUSVd6bL44KcDKq/LM2aLbEnJtEjDnLy59irew6ud0Hg683e0HvoM/7cHY8sarBR8BpEJOizURf6UVrEuVhdREUPDSbII9l+Qxz0UMMlwTxUc2k57Xa1mN266h+MmWWhIIMN7CIShT1Zlatd+zsY+TE+0bmh4efvAt4BsOwE="), PackedByteArray("3mX87yx3SgAH6KddAQAAAAAA1O7y8Hy7TWo2Ni8vAA==")]])
+granule_positions = PackedInt64Array(0, 0, 6912)
+sampling_rate = 44100.0
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_3yqyl"]
+packet_sequence = SubResource("OggPacketSequence_ldmoa")
+
+[sub_resource type="Animation" id="Animation_iifgy"]
+resource_name = "death"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epg4t"]
+_data = {
+&"death": SubResource("Animation_iifgy")
+}
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_qi2p4")
+speed = 20.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2orkt")
+animation = &"die"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0b4ue")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(3, -18)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 18)
+shape = SubResource("CapsuleShape2D_n6urq")
+
+[node name="DieSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamOggVorbis_3yqyl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_epg4t")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

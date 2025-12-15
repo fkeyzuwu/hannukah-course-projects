@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dngyh52q7jf8m"]
+
+[ext_resource type="Script" uid="uid://c2pfhuq43rjiw" path="res://player.gd" id="1_vonw3"]
+[ext_resource type="Texture2D" uid="uid://c1j526t8cwokh" path="res://art/Sprites/Characters/Default/character_green_front.png" id="2_oi3di"]
+[ext_resource type="Script" uid="uid://c0dovgwxqc1se" path="res://enemy.gd" id="3_0b4ue"]
+[ext_resource type="Texture2D" uid="uid://4yku2a25l4q3" path="res://art/Sprites/Characters/Default/character_pink_front.png" id="3_oi3di"]
+[ext_resource type="PackedScene" uid="uid://s6y8txoft53j" path="res://speed_powerup.tscn" id="5_f2txt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oi3di"]
+radius = 39.0
+height = 98.0
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(284, 91)
+collision_mask = 2
+script = ExtResource("1_vonw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_oi3di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_oi3di")
+
+[node name="SpeedPowerupTimer" type="Timer" parent="Player"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+position = Vector2(641, 287)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("3_0b4ue")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+texture = ExtResource("3_oi3di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(1, 18)
+shape = SubResource("CapsuleShape2D_oi3di")
+
+[node name="SpeedPowerup" parent="." instance=ExtResource("5_f2txt")]
+position = Vector2(332, 393)
+
+[connection signal="timeout" from="Player/SpeedPowerupTimer" to="Player" method="_on_speed_powerup_timer_timeout"]
