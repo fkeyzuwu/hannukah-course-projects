@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://6ep442v8ec8n"]
+
+[ext_resource type="Script" uid="uid://c54eevepp1bpl" path="res://level.gd" id="1_u52ul"]
+[ext_resource type="FontFile" uid="uid://c1uupsm0myxy2" path="res://fonts/ComicRelief-Regular.ttf" id="2_vonw3"]
+[ext_resource type="AudioStream" uid="uid://dyouecn3jklxp" path="res://audio/fx1.wav" id="3_n6hdu"]
+[ext_resource type="AudioStream" uid="uid://bf1o0kdh47vmi" path="res://audio/fx2.wav" id="4_km5ld"]
+[ext_resource type="AudioStream" uid="uid://cq1pwll7qrvtg" path="res://audio/fx3.wav" id="5_i2t4f"]
+[ext_resource type="AudioStream" uid="uid://ceo3rvw5slga6" path="res://audio/fx4.wav" id="6_8cye3"]
+[ext_resource type="AudioStream" uid="uid://b74tk0m5hdwhn" path="res://audio/fx5.wav" id="7_2orkt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u52ul"]
+bg_color = Color(0.2342444, 0.6733048, 0.68779975, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.00089797244, 0.069180176, 0.15851748, 1)
+border_blend = true
+corner_radius_top_left = 360
+corner_radius_top_right = 360
+corner_radius_bottom_right = 360
+corner_radius_bottom_left = 390
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xgho"]
+bg_color = Color(0.14662227, 0.46951604, 0.47815877, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.00089797244, 0.069180176, 0.15851748, 1)
+border_blend = true
+corner_radius_top_left = 360
+corner_radius_top_right = 360
+corner_radius_bottom_right = 360
+corner_radius_bottom_left = 390
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vonw3"]
+bg_color = Color(0.50164694, 0.91451037, 0.92491937, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.00089797244, 0.069180176, 0.15851748, 1)
+border_blend = true
+corner_radius_top_left = 360
+corner_radius_top_right = 360
+corner_radius_bottom_right = 360
+corner_radius_bottom_left = 390
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vonw3"]
+playback_mode = 2
+streams_count = 5
+stream_0/stream = ExtResource("3_n6hdu")
+stream_1/stream = ExtResource("4_km5ld")
+stream_2/stream = ExtResource("5_i2t4f")
+stream_3/stream = ExtResource("6_8cye3")
+stream_4/stream = ExtResource("7_2orkt")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_u52ul")
+
+[node name="AddScoreButton" type="Button" parent="."]
+offset_left = 170.0
+offset_top = 86.0
+offset_right = 235.0
+offset_bottom = 150.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.8358535, 0.44162104, 0.47008836, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_u52ul")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5xgho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vonw3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 191.0
+offset_top = 28.12
+offset_right = 359.0
+offset_bottom = 85.12011
+theme_override_colors/font_color = Color(1.6364455e-06, 0.86618185, 0.5865003, 1)
+theme_override_fonts/font = ExtResource("2_vonw3")
+theme_override_font_sizes/font_size = 40
+text = "Money: 0"
+
+[node name="AddRobotButton" type="Button" parent="."]
+offset_left = 453.0
+offset_top = 113.0
+offset_right = 765.0
+offset_bottom = 239.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 30
+text = "קנה רובוט ב10 שקל"
+
+[node name="BuyRobotSound" type="AudioStreamPlayer" parent="AddRobotButton"]
+stream = SubResource("AudioStreamRandomizer_vonw3")
+
+[node name="RobotIncomeTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="AddScoreButton" to="." method="_on_add_score_button_pressed"]
+[connection signal="pressed" from="AddRobotButton" to="." method="_on_add_robot_button_pressed"]
+[connection signal="timeout" from="RobotIncomeTimer" to="." method="_on_robot_income_timer_timeout"]

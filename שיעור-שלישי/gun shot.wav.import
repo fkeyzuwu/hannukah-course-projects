@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkef3shoccv6c"
+path="res://.godot/imported/gun shot.wav-4c662c1233daaacec2fbb0164d90bd72.sample"
+
+[deps]
+
+source_file="res://gun shot.wav"
+dest_files=["res://.godot/imported/gun shot.wav-4c662c1233daaacec2fbb0164d90bd72.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

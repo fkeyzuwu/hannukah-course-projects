@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgc2wye158rxj"]
+
+[ext_resource type="Texture2D" uid="uid://k80yo8n7jldk" path="res://art/Tiles/tile_0072.png" id="1_ovccj"]
+[ext_resource type="Script" uid="uid://cywrofjovct6f" path="res://farming_robot.gd" id="2_r5sve"]
+
+[sub_resource type="Animation" id="Animation_r5sve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.9599311]
+}
+
+[sub_resource type="Animation" id="Animation_ovccj"]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(2.070531, 3.732131),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(6, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.48, 0.6666667),
+"transitions": PackedFloat32Array(3.732131, 3.732131, 3.732131, 3.732131),
+"update": 0,
+"values": [0.9599311, 0.0, -0.31939524, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f3de7"]
+_data = {
+&"RESET": SubResource("Animation_r5sve"),
+&"spawn": SubResource("Animation_ovccj")
+}
+
+[node name="FarmingRobot" type="Sprite2D"]
+texture_filter = 1
+rotation = 0.9599311
+scale = Vector2(6, 6)
+texture = ExtResource("1_ovccj")
+script = ExtResource("2_r5sve")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f3de7")
+}
