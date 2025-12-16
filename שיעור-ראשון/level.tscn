@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cmdl4ambnwbl2"]
+[gd_scene load_steps=24 format=4 uid="uid://cmdl4ambnwbl2"]
 
 [ext_resource type="PackedScene" uid="uid://c3pdta6karrr4" path="res://player.tscn" id="1_i2t4f"]
 [ext_resource type="Texture2D" uid="uid://cd62r1e18cpqc" path="res://platformer_assets/Free/Background/Blue.png" id="2_8cye3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b5olc7e05rx3a" path="res://platformer_assets/Free/Background/Yellow.png" id="8_5pxul"]
 [ext_resource type="PackedScene" uid="uid://c3m6uecmn41l3" path="res://totem.tscn" id="10_8cye3"]
 [ext_resource type="PackedScene" uid="uid://chkougotwb5j4" path="res://coin.tscn" id="11_2orkt"]
+[ext_resource type="Script" uid="uid://boo1gmfwf0rgh" path="res://killzone.gd" id="12_aicyk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fedht"]
 texture = ExtResource("2_8cye3")
@@ -351,6 +352,8 @@ texture = ExtResource("3_oi3di")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_0b4ue")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aicyk"]
+
 [node name="Level" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -386,3 +389,13 @@ position = Vector2(800, -162)
 unique_name_in_owner = true
 position = Vector2(214, -233)
 collision_mask = 2
+
+[node name="Killzone" type="Area2D" parent="."]
+position = Vector2(450, -1)
+collision_layer = 0
+script = ExtResource("12_aicyk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_aicyk")
+
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

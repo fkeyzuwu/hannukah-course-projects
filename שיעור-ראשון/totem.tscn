@@ -3,22 +3,22 @@
 [ext_resource type="Script" uid="uid://dxas58v7kj57f" path="res://totem.gd" id="1_4asy5"]
 [ext_resource type="Texture2D" uid="uid://bobesvoh33sfq" path="res://platformer_assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Idle 1/1.png" id="1_jwx21"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4asy5"]
-radius = 17.029387
+[sub_resource type="CircleShape2D" id="CircleShape2D_wym2b"]
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pk3ik"]
 radius = 73.00685
 
 [node name="Totem" type="Area2D"]
-collision_layer = 0
+collision_layer = 4
 script = ExtResource("1_4asy5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jwx21")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 4)
-shape = SubResource("CircleShape2D_4asy5")
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_wym2b")
 
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
 
