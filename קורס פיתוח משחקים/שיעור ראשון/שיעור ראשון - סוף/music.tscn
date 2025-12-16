@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://u8nqds6fm6m7"]
+
+[ext_resource type="AudioStream" uid="uid://tqjo0rfewm1q" path="res://platformer_assets/sound/music/slimegame main music.wav" id="1_3h6ak"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_3h6ak")
+volume_db = -12.0
+autoplay = true
