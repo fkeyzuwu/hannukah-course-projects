@@ -1,11 +1,19 @@
 extends Area2D
 
+@export var speed = 50.0
+var player_in_area = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _physics_process(delta):
+	if player_in_area:
+		var direction = position.direction_to(%Player.position)
+		position += direction * speed * delta
+		if direction.x > 0:
+			$Sprite2D.flip_h = true
+		elif direction.x < 0:
+			$Sprite2D.flip_h = false
 
+func _on_body_entered(body):
+	get_tree().reload_current_scene.call_deferred()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_player_detection_area_body_entered(body):
+	player_in_area = true

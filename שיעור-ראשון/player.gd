@@ -4,7 +4,9 @@ extends CharacterBody2D
 @export var jump_force = 250.0
 @export var gravity = 500.0
 
-func _physics_process(delta: float) -> void:
+var coins = 0
+
+func _physics_process(delta):
 	# Add gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -35,3 +37,8 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("jump")
 	
 	move_and_slide()
+
+func add_coin():
+	coins += 1
+	$Label.text = "Coins: " + str(coins)
+	$CoinAudio.play()

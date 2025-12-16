@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cd03x3i3vnjou"
+path="res://.godot/imported/gmtk main.wav-52f828bbdbf1ae9a5e438e50cf21058c.sample"
+
+[deps]
+
+source_file="res://platformer_assets/sound/music/gmtk main.wav"
+dest_files=["res://.godot/imported/gmtk main.wav-52f828bbdbf1ae9a5e438e50cf21058c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
